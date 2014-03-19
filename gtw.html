@@ -1,0 +1,28 @@
+<head>
+  <title>How about a nice game of chess?</title>
+</head>
+
+<body>
+  {{> hello}}
+  {{> nukeCities}}
+</body>
+
+<template name="hello">
+  <h2>I don't always nuke cities...</h2><h1>...but when I do, it's Global Thermonuclear War!</h1>
+  {{greeting}}
+</template>
+
+<template name="nukeCities">
+  <h3>Doomed Cities</h3>
+
+  <ul>
+    {{#each cities}}
+      <li>{{name}}</li>
+    {{else}}
+      No cities found!
+    {{/each}}
+  </ul>
+
+  <input id="cityToAdd" />
+  <input id="addCity" type="button" value="Add" />
+</template>
