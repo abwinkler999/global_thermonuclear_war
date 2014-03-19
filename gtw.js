@@ -8,7 +8,7 @@ if (Meteor.isClient) {
   Template.nukeCities.cities = function() {
     return Cities.find({});
   }
-  
+
   Template.nukeCities.events({
     'click #addCity' : function() {
       var textBox = $('#cityToAdd');
@@ -16,6 +16,12 @@ if (Meteor.isClient) {
         name : textBox.val()
       });
       textBox.val('');
+    },
+
+    'click #nuke' : function() {
+      var unlucky = Cities.findOne({});
+      if (unlucky)
+        Cities.remove(unlucky._id);
     }
   });
 }
