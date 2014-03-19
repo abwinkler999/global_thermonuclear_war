@@ -5,6 +5,10 @@ if (Meteor.isClient) {
     return "Please enter targets.";
   };
 
+  Template.nukeCities.cities = function() {
+    return Cities.find({});
+  }
+  
   Template.nukeCities.events({
     'click #addCity' : function() {
       var textBox = $('#cityToAdd');
