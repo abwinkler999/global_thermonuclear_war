@@ -13,15 +13,17 @@ if (Meteor.isClient) {
     'click #addCity' : function() {
       var textBox = $('#cityToAdd');
       Cities.insert({
-        name : textBox.val()
+        name : textBox.val(),
+        item_id : textBox.val().replace(" ", "")
       });
       textBox.val('');
     },
 
     'click #nuke' : function() {
       var unlucky = Cities.findOne({});
-      if (unlucky)
+      if (unlucky) {
         Cities.remove(unlucky._id);
+      }
     }
   });
 }

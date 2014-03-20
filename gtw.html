@@ -1,5 +1,6 @@
 <head>
   <title>How about a nice game of chess?</title>
+  <link rel="stylesheet" type="text/css" href = "gtw.css">
 </head>
 
 <body>
@@ -13,11 +14,13 @@
 </template>
 
 <template name="nukeCities">
-  <h3>Doomed Cities</h3>
+  <div id="targeter">
+  <div id="citylist">
+  <h2>Doomed Cities</h2>
 
   <ul>
     {{#each cities}}
-      <li>{{name}}</li>
+      <li><h3>{{name}}</h3></li>
     {{else}}
       No cities found!
     {{/each}}
@@ -26,4 +29,6 @@
   <input id="cityToAdd" />
   <input id="addCity" type="button" value="Add" />
   <input id="nuke" type="button" value="Nuke!" />
+  </div>
+  </div>
 </template>
